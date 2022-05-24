@@ -1,6 +1,7 @@
 
 import sys
 
+
 def pow(base, exp):
 
     result = 1
@@ -30,15 +31,15 @@ def rational(numerator, denominator):
 
     string = ""
 
-    numdigits = 130
+    numdigits = 32
     stringindex = 0
     facevalue = 0
-    power = logbase10(int(numerator // denominator))
+    power = logbase10(numerator // denominator)
     result = int(numerator // denominator)
     tentopow = pow(10, power)
 
     while power > 0 and numdigits > 0:
-        facevalue = str(int(result // tentopow) % 10)
+        facevalue = str((result // tentopow) % 10)
         power -= 1
         numdigits -= 1
         string += facevalue
@@ -54,7 +55,7 @@ def rational(numerator, denominator):
 
         while numdigits > 0:
             numerator *= 10
-            result = int(numerator // denominator)
+            result = numerator // denominator
             facevalue = str(result % 10)
             numdigits -= 1
 
